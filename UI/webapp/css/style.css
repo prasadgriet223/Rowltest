@@ -1,0 +1,332 @@
+	/* Enter your custom styles here */
+	
+	.Height_CSS {
+	    overflow: hidden !important;
+	}
+	
+	.sapTntNavLIGroup {
+	    border-bottom: 0px solid #e5e5e5 !important;
+	}
+	
+	.saparatebackground {
+	    background: white;
+	}
+	
+	.sapTntNavLIItem {
+	    height: 3rem !important;
+	}
+	
+	.margintop {
+	    margin-top: 0.5rem !important;
+	}
+	
+	.idJobdetailscss {
+	    border: 0px !important;
+	}
+	
+	.sapbuild .sapMBtnInner {
+	    border: none !important;
+	    background: none !important;
+	}
+	
+	.sapbuild .sapMBtnIcon {
+	    font-size: 1.2rem !important;
+	}
+	
+	.sapbuildgreen .sapMBtnInner {
+	    border: none !important;
+	    background: none !important;
+	}
+	
+	.sapbuildgreen .sapMBtnIcon {
+	    font-size: 1.2rem !important;
+	    color: #057e05 !important;
+	}
+	
+	.sapbuildgrey .sapMBtnInner {
+	    border: none !important;
+	    background: none !important;
+	}
+	
+	.sapbuildgrey .sapMBtnIcon {
+	    font-size: 1.2rem !important;
+	    color: #494949 !important;
+	}
+	
+	.sapbuildgrey .sapMBtnIcon:hover {
+	    font-size: 1.2rem !important;
+	    color: #ff221b!important;
+	}
+	
+	.sapUiBlockCellContent {
+	    padding: 0.75rem !important;
+	}
+	
+	.sapSuiteUiCommonsBorderBottomStateRegular {
+	    border-bottom-color: #999999;
+	    visibility: hidden;
+	}
+	
+	.customtile {
+	    margin-right: 1.5rem;
+	    border-radius: 1.5rem;
+	}
+	
+	.idBuildlogs_html {
+	    font-size: 1.1rem;
+	    font-family: monospace;
+	    background: #f0f0f0;
+	    padding: 1.2rem;
+	    border-radius: 0.75rem;
+	}
+	
+	.sapMText.processstatus[data-success] {
+	    background: #41e198;
+	    background: -moz-linear-gradient(-45deg, #41e198 0%, #3cb6b5 100%);
+	    background: -webkit-linear-gradient(-45deg, #41e198 0%, #3cb6b5 100%);
+	    background: linear-gradient(135deg, #41e198 0%, #3cb6b5 100%);
+	    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#41e198', endColorstr='#3cb6b5', GradientType=1);
+	    border-radius: 2.5rem;
+	    height: 2rem;
+	    text-align: center !important;
+	    width: 6rem;
+	    padding-top: 0.5rem;
+	    color: white!important;
+	    -webkit-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    -moz-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	}
+	
+	.sapMText.processstatus[data-Waiting] {
+	    background: #f3ce0e !important;
+	    background: -moz-linear-gradient(-45deg, #41e198 0%, #3cb6b5 100%);
+	    background: -webkit-linear-gradient(-45deg, #41e198 0%, #3cb6b5 100%);
+	    background: linear-gradient(135deg, #41e198 0%, #3cb6b5 100%);
+	    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#41e198', endColorstr='#3cb6b5', GradientType=1);
+	    border-radius: 2.5rem;
+	    height: 2rem;
+	    text-align: center !important;
+	    width: 6rem;
+	    padding-top: 0.5rem;
+	    color: white!important;
+	    -webkit-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    -moz-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	}
+	
+	.sapMText.processstatus[data-Started] {
+	    background: #f3ce0e !important;
+	    background: -moz-linear-gradient(-45deg, #41e198 0%, #3cb6b5 100%);
+	    background: -webkit-linear-gradient(-45deg, #41e198 0%, #3cb6b5 100%);
+	    background: linear-gradient(135deg, #41e198 0%, #3cb6b5 100%);
+	    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#41e198', endColorstr='#3cb6b5', GradientType=1);
+	    border-radius: 2.5rem;
+	    height: 2rem;
+	    text-align: center !important;
+	    width: 6rem;
+	    padding-top: 0.5rem;
+	    color: white!important;
+	    -webkit-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    -moz-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	}
+	
+	.sapMText.processstatus[data-fail] {
+	    background: #f6529d;
+	    background: -moz-linear-gradient(-45deg, #f6529d 0%, #ff464c 100%);
+	    background: -webkit-linear-gradient(-45deg, #f6529d 0%, #ff464c 100%);
+	    background: linear-gradient(135deg, #f6529d 0%, #ff464c 100%);
+	    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f6529d', endColorstr='#ff464c', GradientType=1);
+	    border-radius: 2.5rem;
+	    height: 2rem;
+	    text-align: center !important;
+	    width: 6rem;
+	    padding-top: 0.5rem;
+	    color: white!important;
+	    -webkit-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    -moz-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	}
+	
+	.sapMText.processstatus[data-Stopped] {
+	    background: #f6529d;
+	    background: -moz-linear-gradient(-45deg, #f6529d 0%, #ff464c 100%);
+	    background: -webkit-linear-gradient(-45deg, #f6529d 0%, #ff464c 100%);
+	    background: linear-gradient(135deg, #f6529d 0%, #ff464c 100%);
+	    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f6529d', endColorstr='#ff464c', GradientType=1);
+	    border-radius: 2.5rem;
+	    height: 2rem;
+	    text-align: center !important;
+	    width: 6rem;
+	    padding-top: 0.5rem;
+	    color: white!important;
+	    -webkit-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    -moz-box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	    box-shadow: 1px 2px 5px 0px rgba(204, 204, 204, 1);
+	}
+	
+	.sapMLIBImgNav {
+	    width: 1.3rem;
+	    font-size: 0.75rem;
+	    color: #6a6d70;
+	    border-radius: 50%;
+	    height: 1.3rem;
+	    line-height: 1.3rem;
+	    border: 1px solid #eeeeee;
+	}
+	
+	.releaseCyclestyle {
+	    -webkit-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    -moz-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	}
+	
+	.releaseCycledTitle {
+	    color: #1a55e3 !important;
+	    margin-left: 0rem !important;
+	}
+	
+	.Dashboardleftpane {
+	    margin-left: 0.5rem !important;
+	    width: 2rem;
+	    font-size: 1rem;
+	    color: #6a6d70 !important;
+	    border-radius: 50%;
+	    height: 2rem;
+	    line-height: 2rem;
+	    background: #f3f3f3;
+	    border-left: 1px solid #eeeeee !important;
+	}
+	
+	.dashboardHeader {
+	    height: 3.25rem !important;
+	}
+	
+	.sapImgcustom {
+	    height: 3.3rem !important;
+	    /*-webkit-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);*/
+	    /*-moz-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);*/
+	    /*box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);*/
+	}
+	
+	.sapTntToolHeader.sapMTB {
+	    background-color: white !important;
+	    border-bottom: 0.0625rem solid #eeeeee !important;
+	    height: 4rem !important;
+	    -webkit-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    -moz-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	}
+	
+	.sapTntToolPageHeader {
+	    height: 4rem !important;
+	    -webkit-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    -moz-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	}
+	
+	.sideShadow {
+	    -webkit-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    -moz-box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    box-shadow: 0px 0px 4px 1px rgba(226, 226, 226, 1.5);
+	    border: none !important;
+	}
+	
+	.marginLeftimg {
+	    margin-left: 0.4rem !important;
+	}
+	
+	.sapMPageBgStandard {
+	    background-color: #f7f7ff !important
+	}
+	
+	.sapMBreadcrumbs .sapMBreadcrumbsSeparator {
+	    padding: 0 0.4rem;
+	    font-size: 1.2rem;
+	    color: #999999 !important;
+	}
+	
+	.tblHdrcss {
+	    background: #ffffff !important;
+	    color: #555555 !important;
+	}
+	
+	.sapTntNavLIItemSelected .sapTntNavLIGroup {
+	    background-color: #1a55e3 !important;
+	    border: none !important;
+	}
+	
+	.sapTntNavLIItemSelected .sapTntNavLIGroup>.sapMText {
+	    color: white !important;
+	}
+	
+	.sapTntNavLIItemSelected .sapTntNavLIGroup>.sapUiIcon {
+	    color: white !important;
+	}
+	
+	.sapTntToolHeader .sapMText {
+	    color: #0a1827;
+	}
+	
+	.buildbar {
+	    height: 3rem !important;
+	}
+	
+	.buildchangesPanel .sapMPanelExpandableIcon {
+	    width: 1.3rem;
+	    font-size: 0.75rem;
+	    color: #6a6d70;
+	    border-radius: 50%;
+	    height: 1.3rem;
+	    line-height: 1.3rem;
+	    border: 1px solid #eeeeee;
+	    margin-left: 0.5rem;
+	}
+	
+	.buildchangesPanel .sapMPanelWrappingDivTb {
+	    border-bottom: none !important;
+	}
+	
+	.buildchangesPanel .sapMIBar.sapMTB {
+	    margin-top: 0.5rem !important;
+	}
+	
+	.idbuildchangescommitinfotxt.sapMText {
+	    background: #2287c9;
+	    padding: 1rem;
+	    border-radius: 0.75rem;
+	    color: white;
+	}
+	
+	.changedFilesbar.sapMBar {
+	    box-shadow: none !important;
+	}
+	
+	*,
+	a,
+	p,
+	span,
+	div,
+	h1,
+	h2,
+	h2,
+	h4,
+	h5,
+	label,
+	h6,
+	html {
+	    outline: none !important;
+	    text-decoration: none !important;
+	}
+	
+	.build_dialogcss .sapMBar {
+	    background-color: #0a6ed1 !important;
+	}
+	
+	.build_dialogcss .sapMTitle {
+	    color: white !important;
+	}
+	.build_dialogcss{
+		width:60% ;
+	}
+	

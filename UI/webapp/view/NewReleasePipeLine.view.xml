@@ -1,0 +1,56 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:p="sap.suite.ui.commons" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.layout.form" controllerName="scp.com.saparate.controller.NewReleasePipeLine">
+	<App>
+		<pages>
+			<Page>
+				<content>
+					<u:SplitContainer id="idReleasePipelineContainer" showSecondaryContent="true">
+						<u:secondaryContent>
+							<form:SimpleForm editable="true" id="idSelectBuildReleasePipeline" layout="ResponsiveGridLayout">
+								<form:content>
+									<Label text="{i18n>enterReleasePipelineName}"/>
+									<Input  id="idWorkFlowName" placeholder="only alphanumerics allowed" liveChange="additionalInfoValidation_release"/>
+									<Label text="{i18n>artifactSource}"/>
+									<Select id="idArtifact_ReleasePipeline"  >
+										<core:ListItem key="BuildPipeline" icon="sap-icon://action-settings" text="BuildPipeline"/>
+									</Select>
+									<Label text="{i18n>selectBuildPipeline}"/>
+									<Select id="idBuildSelect_ReleasePipeline" forceSelection="false" items="{path: 'Jobs>/'}" change="onLoadBuildNumbers">
+										<core:ListItem key="{Jobs>id}" icon="sap-icon://action-settings" text="{Jobs>projectname}"/>
+									</Select>
+									<Label text="{i18n>selectBuildPipeline}"/>
+								</form:content>
+							</form:SimpleForm>
+						</u:secondaryContent>
+						<u:content>
+							<sap.ui.layout:VerticalLayout width="100%" xmlns:sap.ui.layout="sap.ui.layout" id="layout0">
+								<sap.ui.layout:content>
+									<IconTabBar expanded="true" id="idTabNewReleasePipeline" expandable="false" select="handleIconTabBarSelect"
+										class="sapUiResponsiveContentPadding">
+										<items></items>
+									</IconTabBar>
+								</sap.ui.layout:content>
+							</sap.ui.layout:VerticalLayout>
+						</u:content>
+					</u:SplitContainer>
+				</content>
+				<customHeader>
+					<Bar id="idReleasePipelinebar">
+						<contentLeft>
+							<!--<core:Icon src="sap-icon://menu" text="Boards" size="1em" id="icon0" press="openBoardSearch"/>-->
+							<Button xmlns="sap.m" text="{i18n>buildPipelinesforRelease}" icon="sap-icon://menu2" press="openBuildPipeLineSearch"/>
+						</contentLeft>
+						<contentMiddle>
+							<Text xmlns="sap.m" text="{i18n>createNewReleasePipeline}"/>
+							<Button xmlns="sap.m" text="{i18n>addStage}" icon="sap-icon://sys-add" press="onAddStageName"/>
+							<Button xmlns="sap.m" text="{i18n>removeStage}" visible="false" icon="sap-icon://sys-minus" press="onRemoveStageName"/>
+						</contentMiddle>
+						<contentRight>
+							<Button text="{i18n>saveWorkflow}" enabled="false" id="idBtnsaveworkflow" icon="sap-icon://create" press="onSaveNewReleasePipeLineDialog"/>
+						</contentRight>
+					</Bar>
+				</customHeader>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

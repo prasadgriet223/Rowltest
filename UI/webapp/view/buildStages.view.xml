@@ -1,0 +1,94 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="scp.com.saparate.controller.buildStages" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<App>
+		<pages>
+			<Page id="idBuildStages" navButtonPress="navigatetoPrevious" showHeader="false">
+				<content>
+					<Table id="idPipeLineBuildStageResults" items="{Jobstatusdetails>/0/stageResult/stages}" alternateRowColors="true"
+						selectionChange="ShowStageLog">
+						<columns>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>stage}"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>status}"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>timestamp}"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>duration}"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Logs"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active">
+								<cells>
+									<ObjectStatus state="Information" text="{Jobstatusdetails>name}"/>
+									<Text text="{ parts : [ 'Jobstatusdetails>status'], formatter: '.formatter.formatStatusText' }" class="processstatus">
+										<customData>
+											<core:CustomData key="success" value="" writeToDom="{= ${Jobstatusdetails>status} === 'SUCCESS' }"/>
+											<core:CustomData key="fail" value="" writeToDom="{= ${Jobstatusdetails>status} === 'FAILED' }"/>
+											<core:CustomData key="Waiting" value="" writeToDom="{= ${Jobstatusdetails>status} === 'IN_PROGRESS' }"/>
+										</customData>
+									</Text>
+									<Text text="{Jobstatusdetails>startTime}"/>
+									<Text text="{Jobstatusdetails>duration}"/>
+									<Button icon="sap-icon://syntax" class="sapbuildgreen" type="Transparent" press="showStagewiselogs"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="idlog_content">
+						<headerToolbar>
+							<Toolbar id="toolbar1">
+								<Title text="{i18n>overallBuildLogs}"/>
+								<ToolbarSpacer/>
+							</Toolbar>
+						</headerToolbar>
+					</Panel>
+				</content>
+				<subHeader>
+					<!--<Bar xmlns:core="sap.ui.core" class="buildbar">-->
+					<!--	<contentLeft>-->
+					<!--		<Breadcrumbs xmlns="sap.m" separatorStyle="DoubleGreaterThan" id="idBreadcrum_buildStages">-->
+					<!--			<links>-->
+					<!--				<Link text="{i18n>project}" emphasized="false" app:selectedkey="0"/>-->
+					<!--				<Link text="{i18n>dashboard}" emphasized="false" press="navigateTo" app:selectedkey="1"/>-->
+					<!--				<Link text="{i18n>buildPipelines}" emphasized="false" press="navigateTo" app:selectedkey="2"/>-->
+					<!--				<Link id="idbc_build" emphasized="false" press="navigateTo" app:selectedkey="3"/>-->
+					<!--			</links>-->
+					<!--		</Breadcrumbs>-->
+					<!--	</contentLeft>-->
+					<!--	<contentRight>-->
+					<!--		<Button xmlns="sap.m" text="{i18n>buildchanges}" type="Accept" press="toBuildChanges" icon="sap-icon://display"/>-->
+					<!--		<Button xmlns="sap.m" text="{i18n>refresh}" type="Emphasized" press="refreshData" icon="sap-icon://refresh"/>-->
+					<!--	</contentRight>-->
+					<!--</Bar>-->
+					<!--				<Toolbar class="sapUiMediumMarginTop" id="toolbjar1">-->
+					<!--	<Label text="I am a text control, so I will shrink whenever the toolbar overflows."/>-->
+					<!--	<ToolbarSpacer/>-->
+					<!--	<Button text="Non-shrinkable button"/>-->
+					<!--	<ToolbarSpacer/>-->
+					<!--	<SearchField width="100%" placeholder="My width is 100%, so I should shrink."/>-->
+					<!--</Toolbar>-->
+					<OverflowToolbar class="buildbar">
+						<Breadcrumbs xmlns="sap.m" separatorStyle="DoubleGreaterThan" id="idBreadcrum_buildStages">
+							<links>
+								<Link text="{i18n>project}" emphasized="false" app:selectedkey="0"/>
+								<Link text="{i18n>dashboard}" emphasized="false" press="navigateTo" app:selectedkey="1"/>
+								<Link text="{i18n>buildPipelines}" emphasized="false" press="navigateTo" app:selectedkey="2"/>
+								<Link id="idbc_build" emphasized="false" press="navigateTo" app:selectedkey="3"/>
+							</links>
+						</Breadcrumbs>
+						<ToolbarSpacer/>
+						<Button xmlns="sap.m" text="{i18n>buildchanges}" type="Accept" press="toBuildChanges" icon="sap-icon://display"/>
+						<Button xmlns="sap.m" text="{i18n>refresh}" type="Emphasized" press="refreshData" icon="sap-icon://refresh"/>
+					</OverflowToolbar>
+				</subHeader>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

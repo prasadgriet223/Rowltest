@@ -1,0 +1,319 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "scp.com.saparate",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "scp.com.saparate.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "Login"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.m": {},
+				"sap.suite.ui.commons": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "scp.com.saparate.i18n.i18n"
+				}
+			},
+			"repoType": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": true,
+				"uri": "mockData/Repotype.json"
+			},
+
+			"schedule": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": true,
+				"uri": "mockData/schedule.json"
+			},
+			"branch": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false,
+				"uri": "mockData/branch.json"
+			},
+			"Projects": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false,
+				"uri": "mockData/projects.json"
+			},
+			"servers": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {},
+				"preload": true,
+				"uri": "i18n/Servers.properties"
+			},
+			"BreadCrumb": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": true
+			},
+			"loadsKey_Async": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "scp.com.saparate.view",
+				"controlAggregation": "pages",
+				"controlId": "appView",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "Dashboard",
+				"pattern": "Dashboard",
+				"target": ["Dashboard"]
+			}, {
+				"name": "App",
+				"pattern": "",
+				"target": ["App"]
+			}, {
+				"name": "UserStoryBoard",
+				"pattern": "UserStoryBoard",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["UserStoryBoard"]
+			}, {
+				"name": "Projects",
+				"pattern": "Projects",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Projects"]
+			}, {
+				"name": "NewPipeLine",
+				"pattern": "NewPipeLine",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["NewPipeLine"]
+			}, {
+				"name": "jobs",
+				"pattern": "jobs",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["jobs"]
+			}, {
+				"name": "jobdetails",
+				"pattern": "jobdetails/{jobId},{from}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["jobdetails"]
+			}, {
+				"name": "buildStages",
+				"pattern": "buildStages/{jobId},{buildid}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["buildStages"]
+			}, {
+				"name": "Builds",
+				"pattern": "builds/{jobId}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Builds"]
+			}, {
+				"name": "RegisterEnvironments",
+				"pattern": "RegisterEnv",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["RegisterEnvironments"]
+			}, {
+				"name": "Authorize",
+				"pattern": "Authorize",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Authorize"]
+			}, {
+				"name": "Credentials",
+				"pattern": "Credentials",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Credentials"]
+			}, {
+				"name": "NewReleasePipeLine",
+				"pattern": "NewReleasePipeLine",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["NewReleasePipeLine"]
+			}, {
+				"name": "RLpipelines",
+				"pattern": "RLpipelines",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["RLpipelines"]
+			}, {
+				"name": "WorkflowCycleStages",
+				"pattern": "WorkflowCycleStages/{RjobId},{CycleId},{Rlname}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["WorkflowCycleStages"]
+			}, {
+				"name": "Cycles",
+				"pattern": "cycles/{cycleId}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Cycles"]
+			}, {
+				"name": "Inbox",
+				"pattern": "inbox",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Inbox"]
+			}, {
+				"name": "Buildchanges",
+				"pattern": "buildchanges/{jobId},{buildid}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Buildchanges"]
+			}],
+			"targets": {
+				"TargetLogin": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "Login",
+					"viewName": "Login"
+				},
+				"App": {
+					"viewType": "XML",
+					"viewName": "App"
+				},
+				"RLpipelines": {
+					"viewType": "XML",
+					"viewName": "RLpipelines"
+				},
+				"Dashboard": {
+					"viewType": "XML",
+					"viewName": "Dashboard"
+				},
+				"UserStoryBoard": {
+					"viewType": "XML",
+					"viewName": "UserStoryBoard"
+				},
+				"Projects": {
+					"viewType": "XML",
+					"viewName": "Projects"
+				},
+				"NewPipeLine": {
+					"viewType": "XML",
+					"viewName": "NewPipeLine"
+				},
+				"jobs": {
+					"viewType": "XML",
+					"viewName": "jobs"
+				},
+				"jobdetails": {
+					"viewType": "XML",
+					"viewName": "jobdetails"
+				},
+				"buildStages": {
+					"viewType": "XML",
+					"viewName": "buildStages"
+				},
+				"Builds": {
+					"viewType": "XML",
+					"viewName": "Builds"
+				},
+				"RegisterEnvironments": {
+					"viewType": "XML",
+					"viewName": "RegisterEnvironments"
+				},
+				"Authorize": {
+					"viewType": "XML",
+					"viewName": "Authorize"
+				},
+				"Credentials": {
+					"viewType": "XML",
+					"viewName": "Credentials"
+				},
+				"NewReleasePipeLine": {
+					"viewType": "XML",
+					"viewName": "NewReleasePipeLine"
+				},
+				"ReleasePipelineCycles": {
+					"viewType": "XML",
+					"viewName": "ReleasePipelineCycles"
+				},
+				"WorkflowCycleStages": {
+					"viewType": "XML",
+					"viewName": "WorkflowCycleStages"
+				},
+				"Cycles": {
+					"viewType": "XML",
+					"viewName": "Cycles"
+				},
+				"timeline": {
+					"viewType": "XML",
+					"viewName": "timeline"
+				},
+				"Inbox": {
+					"viewType": "XML",
+					"viewName": "Inbox"
+				},
+				"Buildchanges": {
+					"viewType": "XML",
+					"viewName": "Buildchanges"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

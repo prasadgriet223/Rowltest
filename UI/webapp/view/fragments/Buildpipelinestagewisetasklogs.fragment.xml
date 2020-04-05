@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m" height="100%">
+	<Dialog  id="idStgdlg" class="build_dialogcss"   >
+		<content width="50%">
+			<Panel width="auto" expanded="true" id="idlogs_BpipelineStages">
+				<content>
+					<FormattedText id="idStagewiselogsbuildhtml"/>
+				</content>
+			</Panel>
+		</content>
+		<beginButton>
+			<Button text="{i18n>close}" press="onCloselog" type="Emphasized"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

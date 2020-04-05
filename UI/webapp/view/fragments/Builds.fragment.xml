@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Table id="idPipeLineBuildResults" items="{Jobdetails>/}" class="releaseCyclestyle">
+		<columns>
+			<Column demandPopin="true" minScreenWidth="Tablet">
+				<Text text="{i18n>pipeline}"/>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet">
+				<Text text="{i18n>buildNo}"/>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet">
+				<Text text="{i18n>repo}"/>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet">
+				<Text text="{i18n>branch}"/>
+			</Column>
+			<!--<Column demandPopin="true" minScreenWidth="Tablet">-->
+			<!--	<Text text="{i18n>duration}"/>-->
+			<!--</Column>-->
+			<Column demandPopin="true" minScreenWidth="Tablet">
+				<Text text="{i18n>result}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" press="handleSelectionChange">
+				<cells>
+					<Text text="{Jobdetails>name}"/>
+					<Text text="{Jobdetails>number}" class="sapUiSmallMargin"/>
+					<Text text="{ parts : [ 'Jobdetails>repoName'], formatter: '.formatter.jobsSCMURL'}"/>
+					<Text text="{Jobdetails>branchName}"/>
+					<Text text="{ parts : [ 'Jobdetails>buildResult'], formatter: '.formatter.formatStatusText' }" class="processstatus">
+						<customData>
+							<core:CustomData key="success" value="" writeToDom="{= ${Jobdetails>buildResult} === 'SUCCESS' }"/>
+							<core:CustomData key="fail" value="" writeToDom="{= ${Jobdetails>buildResult} === 'FAILURE' }"/>
+							<core:CustomData key="Waiting" value="" writeToDom="{= ${Jobdetails>buildResult} === 'BUILDING' }"/>
+							
+						</customData>
+					</Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+		<headerToolbar>
+			<Toolbar width="100%" id="toolbar1">
+				<content>
+					<Bar id="bar0">
+						<contentLeft>
+							<Text xmlns="sap.m" id="idBuildstblHdr"/>
+						</contentLeft>
+						<contentMiddle></contentMiddle>
+						<contentRight>
+							<Button xmlns="sap.m" text="{i18n>refresh}" press="refreshData" icon="sap-icon://refresh"/>
+						</contentRight>
+					</Bar>
+				</content>
+			</Toolbar>
+		</headerToolbar>
+	</Table>
+</core:FragmentDefinition>

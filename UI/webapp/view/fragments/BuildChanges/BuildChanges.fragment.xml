@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" height="100%">
+	<List items="{buildChanges>/0/items}"  noDataText="{i18n>nobuildchanges}">
+		<CustomListItem>
+			<Panel xmlns="sap.m" width="auto" class="buildchangesPanel" expandable="true" expanded="false">
+				<headerToolbar>
+					<OverflowToolbar id="toolbar" active="true" height="1.5rem" press="onToolbarPress" ariaLabelledBy="myText">
+						<core:Icon src="sap-icon://message-information"/>
+						<Text text="{buildChanges>msg}"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<VBox>
+						<items>
+							<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<items>
+									<Text text="{i18n>commit}" class="sapUiTinyMarginEnd"></Text>
+									<Link text="{buildChanges>id}" emphasized="true" class="sapUiTinyMarginEnd"/>
+									<Text text="{i18n>by}" class="sapUiTinyMarginEnd" ></Text>
+									<Link text="{buildChanges>author/fullName}" emphasized="true"/>
+								</items>
+							</HBox>
+							<!--<Text text="Commit {buildChanges>id} by {buildChanges>author/fullName}" />-->
+							<Text text="{buildChanges>comment}" class="idbuildchangescommitinfotxt sapUiSmallMarginBegin sapUiSmallMarginBottom"/>
+							<Bar class="changedFilesbar">
+								<contentLeft>
+									<Label text="Changed files"/>
+								</contentLeft>
+							</Bar>
+							<VBox items="{buildChanges>paths}">
+								<items>
+									<ObjectStatus icon="sap-icon://user-edit" text="{buildChanges>file}" state="Information"
+										class="sapUiMediumMarginBegin sapUiTinyMarginBottom"/>
+								</items>
+							</VBox>
+						</items>
+					</VBox>
+				</content>
+			</Panel>
+			<VBox visible="false" class="idbuildchangescommitinfotxt">
+				<ObjectStatus icon="sap-icon://message-information" text="{buildChanges>msg}" state="Information"
+					class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/>
+				<Text text="{buildChanges>comment}" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/>
+				<VBox items="{buildChanges>paths}" class="sapUiSmallMarginTop">
+					<items>
+						<ObjectStatus icon="sap-icon://user-edit" text="{buildChanges>file}" state="Information"
+							class="sapUiMediumMarginBegin sapUiTinyMarginBottom"/>
+					</items>
+				</VBox>
+			</VBox>
+		</CustomListItem>
+	</List>
+</core:FragmentDefinition>

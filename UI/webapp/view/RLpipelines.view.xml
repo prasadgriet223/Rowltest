@@ -1,0 +1,58 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="scp.com.saparate.controller.RLpipelines">
+	<App>
+		<pages>
+			<Page title="{i18n>listOfRPipelines}" showHeader="false">
+				<content>
+					<Table items="{path: 'workflows>/'}" id="idtrlAllPipelines" alternateRowColors="true">
+						<columns>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>releasePipelines}"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>CreatedBy}"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>CreatedTime}"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>BuildPipeline}"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>run}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active" press="navigatetoCycles">
+								<cells>
+									<Text text="{workflows>name}"/>
+									<Text text="{workflows>createdBy}"/>
+									<Text text="{ parts : [ 'workflows>createdTime'], formatter: '.formatter.getRecyclyeDate' }"/>
+									<Text text="{workflows>buildInput/buildPipelineJobName}"/>
+									<!--<ObjectStatus xmlns="sap.m" state="Information" text="{ parts : [ 'workflows>createdTime'], formatter: '.formatter.getDateFromGivenDate' }"/>-->
+									<Button class="roundButton" icon="sap-icon://physical-activity" text="" press="initiateTriggerReleasePipeline"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+				<subHeader>
+					<Bar xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="bar0">
+						<contentLeft>
+							<Breadcrumbs separatorStyle="GreaterThan" id="idBreadcrum_RLpipelines">
+								<links>
+									<Link text="{i18n>project}" emphasized="false" />
+									<Link text="{i18n>dashboard}" emphasized="false" press="navigateTo"/>
+								</links>
+							</Breadcrumbs>
+						</contentLeft>
+						<contentMiddle/>
+						<contentRight>
+							<Button icon="sap-icon://create" text="{i18n>createNewReleasePipeline}" press="navigatetoCreateReleasePipeline" id="button6"/>
+						</contentRight>
+					</Bar>
+				</subHeader>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

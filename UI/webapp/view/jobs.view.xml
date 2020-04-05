@@ -1,0 +1,74 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="scp.com.saparate.controller.jobs">
+	<App>
+		<pages>
+			<Page title="{i18n>listOfBuildPipelines}" showHeader="false">
+				<content>
+					<Table items="{path: 'Jobs>/'}" id="idtblAllPipelines" alternateRowColors="true">
+						<columns>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>buildPipelines}"/>
+							</Column>
+							<!--<Column demandPopin="true" minScreenWidth="Tablet">-->
+							<!--	<Text text="Created On"/>-->
+							<!--</Column>-->
+							<Column demandPopin="true">
+								<Text text="{i18n>modifiedOn}"/>
+							</Column>
+							<Column demandPopin="true" width="14rem">
+								<Text text="{i18n>repo}"/>
+							</Column>
+							<Column demandPopin="true" width="14rem">
+								<Text text="{i18n>branch}"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="{i18n>buildNow}"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="{i18n>results}"/>
+							</Column>
+							<!--<Column demandPopin="true" minScreenWidth="Tablet">-->
+							<!--	<Text text="Edit"/>-->
+							<!--</Column>-->
+							<Column demandPopin="true">
+								<Text text="{i18n>delete}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active" press="navigatetoBuilds">
+								<cells>
+									<Text text="{Jobs>projectname}"/>
+									<Text text="{ parts : [ 'Jobs>lastModifiedDate'], formatter: '.formatter.getDate'}"/>
+									<Text text="{ parts : [ 'Jobs>scmUrl'], formatter: '.formatter.jobsSCMURL'}"/>
+									<Text text="{Jobs>branchName}"/>
+									<Button class="sapbuildgreen" icon="sap-icon://media-play" text="" press="initiateTriggerJob"/>
+									<Button class="sapbuild" icon="sap-icon://document-text" text="" press="gotoBuilds"/>
+									<Button class="sapbuildgrey" icon="sap-icon://delete" press="gotoDeleteJob"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+				<subHeader>
+					<OverflowToolbar class="buildbar">
+						<Breadcrumbs xmlns="sap.m" separatorStyle="DoubleGreaterThan" id="idBreadcrum_buildpiplines">
+							<links>
+								<Link text="{i18n>project}" emphasized="false"/>
+								<Link text="{i18n>dashboard}" emphasized="false" press="navigatetoDashboard"/>
+							</links>
+						</Breadcrumbs>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://create" text="{i18n>createBuildPipeline}" type="Accept" press="navigatetoCreatePipeline"/>
+					</OverflowToolbar>
+					<!--<Bar xmlns:core="sap.ui.core" class="buildbar" >-->
+					<!--	<contentLeft>-->
+					<!--	</contentLeft>-->
+					<!--	<contentMiddle/>-->
+					<!--	<contentRight>-->
+					<!--	</contentRight>-->
+					<!--</Bar>-->
+				</subHeader>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

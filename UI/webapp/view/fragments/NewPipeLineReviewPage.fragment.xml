@@ -1,0 +1,29 @@
+<core:FragmentDefinition height="100%" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page id="wizardReviewPage" title="Create New PipeLine Review" showHeader="true">
+		<content>
+			<form:SimpleForm title="Pipeline details" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+				<form:content>
+					<Label class="sapMBar" text="Credentials Used"/>
+					<Text class="sapMBar" id="idNewPipeLineCredentials"/>
+					<Label class="sapMBar" text="Repository Type"/>
+					<Text class="sapMBar" id="idNewPipeLineRepoType"/>
+					<Label text="{i18n>usedRepo}"/>
+					<Text id="idNewPipeLineRepository"/>
+					<Label text="{i18n>usedBranch}"/>
+					<Text id="idNewPipeLineBranch"/>
+					<Label text="Build Type"/>
+					<Text id="idNewPipeLineBuildType"/>
+					<Label text="Scheduling Type"/>
+					<Text id="idNewPipeLineSchedulingType"/>
+				</form:content>
+			</form:SimpleForm>
+			<Bar>
+				<contentMiddle>
+					<Button text="Submit" type="Emphasized" press="handleCreateNewPipeLineSubmit"></Button>
+					<Button text="Cancel" type="Ghost" press="handleCreateNewPipeLineCancel"></Button>
+				</contentMiddle>
+			</Bar>
+		</content>
+		<footer></footer>
+	</Page>
+</core:FragmentDefinition>

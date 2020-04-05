@@ -1,0 +1,28 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="scp.com.saparate.controller.Buildchanges"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<content>
+			<core:Fragment fragmentName="scp.com.saparate.view.fragments.BuildChanges.BuildChanges" type="XML"/>
+		</content>
+		<subHeader>
+			<Bar xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+				<contentLeft>
+					<Breadcrumbs xmlns="sap.m" separatorStyle="DoubleGreaterThan" id="idBreadcrum_buildChanges">
+						<links>
+							<Link text="{i18n>project}" emphasized="false" app:selectedkey="0" />
+							<Link text="{i18n>dashboard}" emphasized="false" press="navigateTo" app:selectedkey="1"/>
+							<Link text="{i18n>buildPipelines}" emphasized="false" press="navigateTo" app:selectedkey="2"/>
+							<Link id="idbc_build_bc" emphasized="false" press="navigateTo" app:selectedkey="3"/>
+							<Link id="idbc_buildno_bc" emphasized="false" press="navigateTo" app:selectedkey="4"/>
+						</links>
+					</Breadcrumbs>
+				</contentLeft>
+				<contentMiddle/>
+				<contentRight>
+					<!--<Button xmlns="sap.m" text="{i18n>buildchanges}" press="toBuildChanges" icon="sap-icon://display"/>-->
+					<!--<Button xmlns="sap.m" text="{i18n>refresh}" press="refreshData" icon="sap-icon://refresh"/>-->
+				</contentRight>
+			</Bar>
+		</subHeader>
+	</Page>
+</mvc:View>

@@ -1,0 +1,13 @@
+{
+	"RepoType": [{
+		"title": "GitHub",
+		"icon": "sap-icon://home-share",
+		"key": "github",
+		"Description": "Home to world's largest community of developers"
+	}, {
+		"title": "BitBucket",
+		"icon": "sap-icon://syntax",
+		"key": "bitbucket",
+		"Description": "Hosted by Atlassian"
+	}]
+}

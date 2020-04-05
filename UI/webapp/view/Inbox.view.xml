@@ -1,0 +1,64 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="scp.com.saparate.controller.Inbox">
+	<App>
+		<pages>
+			<Page title="{i18n>Inboxtitle}">
+				<content>
+					<Table items="{path: 'Inbox>/items'}" id="idAllInbox" alternateRowColors="true">
+						<columns>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Release Pipeline Name"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="Cycle name"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="Stage name"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="Label"/>
+							</Column>
+						
+							<Column demandPopin="true">
+								<Text text="Task type"/>
+							</Column>
+								<Column demandPopin="true">
+								<Text text="Task Description"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="Action"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active" press="doNothing">
+								<cells>
+									<Text text="{Inbox>releaseWorkflow}"/>
+									<Text text="{Inbox>releaseCycleName}"/>
+									<Text text="{Inbox>humanTask/stageName}"/>
+									<Text text="{Inbox>humanTask/label}"/>
+									<Text text="{ parts : [ 'Inbox>humanTask/type'], formatter: '.formatter.TaskNameFormatter'}"/>
+									<Text text="{Inbox>humanTask/message}"/>
+									<HBox width="100%">
+										<items>
+											<!--visible = "{= ${Stages>status} === 'WAITING' }"-->
+											<ObjectAttribute visible="{= ${Inbox>humanTask/type} === 'approvalTask' }" text="Approve" class="sapUiTinyMarginEnd sapUiTinyMarginTop"
+												active="true" press="initiateAction"/>
+											<!--<Button class="roundButton " type="Accept" icon="sap-icon://accept" press="onAcceptButtonPress"/>-->
+											<!--<Button icon="sap-icon://media-pause" type="Transparent"></Button>-->
+											<Text text="/" visible="{= ${Inbox>humanTask/type} === 'approvalTask' }" class="sapUiTinyMarginTop"/>
+											<!--<core:Icon src="sap-icon://media-pause" class="sapUiSmallMarginTop" visible="{= ${Inbox>humanTask/type} === 'approvalTask' }"/>-->
+											<!--<Button class="roundButton " type="Reject" icon="sap-icon://decline" press="onRejectButtonPress"/>-->
+											<ObjectAttribute text="Reject" visible="{= ${Inbox>humanTask/type} === 'approvalTask' }"
+												class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" active="true" press="initiateAction"/>
+											<ObjectAttribute text="Complete" visible="{= ${Inbox>humanTask/type} === 'manualTask' }" active="true" press="initiateAction"/>
+										</items>
+									</HBox>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

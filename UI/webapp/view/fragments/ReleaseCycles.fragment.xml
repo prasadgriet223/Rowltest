@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Table id="idPipeLineCycleResults" items="{Cycledetails>/items}" class="releaseCyclestyle">
+		<ColumnListItem type="Navigation" press="handleSelectionChange_releaseCycle">
+			<cells>
+				<Text text="{Cycledetails>cycleName}"/>
+				<Text text="{Cycledetails>stagesummary/environments}"/>
+				<Text text="{Cycledetails>inputs/buildJobName}"/>
+				<!--<Text text="{ parts : [ 'Cycledetails>endTime'], formatter: '.formatter.getDate' }"/>-->
+				<Text text="{ parts : [ 'Cycledetails>status'], formatter: '.formatter.formatStatusText' }" class="processstatus">
+					<customData>
+						<core:CustomData key="success" value="" writeToDom="{= ${Cycledetails>status} === 'COMPLETED' }"/>
+						<core:CustomData key="fail" value="" writeToDom="{= ${Cycledetails>status} === 'FAILED' }"/>
+						<core:CustomData key="Waiting" value="" writeToDom="{= ${Cycledetails>status} === 'WAITING' }"/>
+						<core:CustomData key="Stopped" value="" writeToDom="{= ${Cycledetails>status} === 'STOPPED' }"/>
+						<core:CustomData key="Started" value="" writeToDom="{= ${Cycledetails>status} === 'STARTED' }"/>
+					</customData>
+				</Text>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column demandPopin="true" class="tblHdrcss" minScreenWidth="Tablet">
+				<Text text="{i18n>cycles}"/>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet">
+				<Text text="{i18n>environment}"/>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet">
+				<Text text="{i18n>buildref}"/>
+			</Column>
+			<!--<Column demandPopin="true" minScreenWidth="Tablet">-->
+			<!--	<Text text="{i18n>endTime}"/>-->
+			<!--</Column>-->
+			<Column demandPopin="true" minScreenWidth="Tablet">
+				<Text text="{i18n>status}"/>
+			</Column>
+		</columns>
+		<headerToolbar>
+			<Toolbar width="100%" id="toolbar2">
+				<content>
+					<Bar id="bar1">
+						<contentLeft>
+							<Text xmlns="sap.m" id="idReleasePipelinesHdr"/>
+						</contentLeft>
+						<contentMiddle></contentMiddle>
+						<contentRight>
+							<Button xmlns="sap.m" text="{i18n>refresh}" press="refreshData_Cycles" icon="sap-icon://refresh"/>
+						</contentRight>
+					</Bar>
+				</content>
+			</Toolbar>
+		</headerToolbar>
+	</Table>
+</core:FragmentDefinition>
